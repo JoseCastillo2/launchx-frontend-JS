@@ -1,0 +1,542 @@
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #656310 rgba(255,255,255,0.1);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #656310;
+    border-radius: 10px;
+    border: 1px inset rgba(255,255,255,0.1);
+  }
+body{
+    background-color:#8ec3d1;
+    box-sizing: border-box;
+}
+
+/*************** CARCASA *************/
+.pokedex {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 800px;
+    height: 680px;
+    background: #eee;
+    border-radius: 10px 10px 60px 10px;
+    box-shadow: 5px 5px rgba(0,0,0,0.1);
+  }
+  .pokedex:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 31px;
+    border-bottom: 4px solid #e0e0e0;
+  }
+  .pokedex:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 89%;
+    height: 31px;
+    border-left: 4px solid #e0e0e0;
+    border-right: 4px solid #e0e0e0;
+    margin-left: 40px;
+  }
+
+  /********** CONTENEDOR IZQUIERDO ****************/
+  .left-side{
+    width: 50%;
+  }
+ /********** CONTENEDOR DERECHO ****************/
+ .right-side{
+  width: 50%;
+}
+
+
+/******************************************************************
+********************inicio PARTE IZQUIERDA ******************************
+******************************************************************/
+
+  /**************** BOTON SUPERIOR DE ENCENDIDO ******************/
+  .on-off {
+    position: absolute;
+    top: 2px;
+    left: 20%;
+    padding: 3px 5px;
+    transform: translateX(-50%);
+    color: #cdcdcd;
+    background-color: #e8e8e8;
+    font-size: 8px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    border-radius: 30px;
+  }
+  .on-off:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    top: -2px;
+    background-color: #e8e8e8;
+    left: 6px;
+  }
+  .on-off:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 5px;
+    top: -2px;
+    left: 9px;
+    background-color: #ddd;
+    box-shadow: 5px 0 #ddd;
+    border-radius: 0 0 3px 3px;
+  }
+
+/*************** PANTALLA ****************/
+
+.screen-frame {
+    position: relative;
+    top: 60px;
+    left: 40px;
+    width: 342px;
+    height: 272px;
+    margin-bottom: 58px;
+    background-color: #777;
+    border-radius: 13px 13px 50px 13px;
+    box-shadow: 1px 1px #666;
+  }
+
+  .battery {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 100px;
+    left: 20px;
+    border-radius: 100%;
+    background-color: #f00;
+    transition: background-color 1000ms linear;
+  }
+  .battery:before {
+    content: "BATTERY";
+    position: relative;
+    top: 18px;
+    left: -10px;
+    font-size: 8px;
+    font-family: sans-serif;
+    color: #b3b3b3;
+  }
+ .screen-cont {
+    position: relative;
+    top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #bdae58;
+    width: 225px;
+    height: 205px;
+    box-shadow: inset 3px 3px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+  .label {
+    position: relative;
+    top: -30px;
+    width: 100%;
+    height: 30px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 10px;
+    font-family: sans-serif;
+    color: #b3b3b3;
+  }
+  .label:before {
+    content: "";
+    position: absolute;
+    left: -43px;
+    top: 12px;
+    width: 90px;
+    height: 3px;
+    background-color: #8b1d90;
+    box-shadow: 0 6px 0 #283593;
+  }
+  .label:after {
+    content: "";
+    position: absolute;
+    right: -46px;
+    top: 12px;
+    width: 95px;
+    height: 3px;
+    background-color: #8b1d90;
+    box-shadow: 0 6px 0 #283593;
+  }
+  #screen {
+    display: inline;
+    position: relative;
+    top: 0px;
+    color: #8a891f;
+    font-size: 17px;
+    font-family: "Pretendo";
+    z-index: 10;
+    animation: fadeIn 5s ease;
+  }
+  
+  @keyframes fadeIn{
+    0%{
+      top: 150px;
+    }
+    100%{
+     top:0;
+    }
+  }
+  #screen p{
+    text-align: center;
+  }
+  #screen p.title{
+    font-size: 24px;
+  }
+  #screen p#info{
+    padding: 0px 5px;
+    font-size: 14px;
+  }
+
+  /********** BOTONERA  ****************/
+
+  .buttons-cont {
+    display: block;
+    position: relative;
+    margin-top: 100px;
+  }
+  #pokeName{
+    display: block;
+    position: relative;
+    text-align: center;
+    border: 1px solid #fff;
+    box-shadow: 1px 1px #ccc;
+    width: 225px;
+    height: 30px;
+    margin: auto;
+
+  }
+  #pokeName::placeholder{
+    color: #ccc;
+  }
+  #pokeName:focus{
+    outline: none;
+    border: 1px solid #bdae58;;
+    box-shadow: 1px 1px #ccc;
+
+  }
+  .d-pad {
+    position: relative;
+    margin-left: 40px;
+    top: 60px;
+  }
+  .d-pad:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: #353535;
+    border-radius: 100%;
+  }
+
+  .vertical, .horizontal {
+    position: absolute;
+    left: 30px;
+    width: 30px;
+    height: 90px;
+    background: #444;
+    border-radius: 5px;
+  }
+  .vertical:before, .horizontal:before {
+    content: "";
+    position: relative;
+    top: 99px;
+    left: 8px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #dedede;
+  }
+  .vertical:after, .horizontal:after {
+    content: "";
+    position: relative;
+    top: -27px;
+    left: -5.6px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #dedede;
+  }
+  .horizontal {
+    transform: rotate(90deg);
+  }
+  .btns-AB {
+    position: absolute;
+    top: 80px;
+    left: 252px;
+    width: 130px;
+    height: 60px;
+    background: #dfdfdf;
+    border-radius: 30px;
+    transform: rotate(-25deg);
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+  }
+  button{
+    border: none;
+  }
+  .btn-A{
+    content: "";
+    position: absolute;
+    text-align: center;
+    top: 8px;
+    right: 9px;
+    width: 44px;
+    height: 44px;
+    background: #a93671;
+    border-radius: 100%;
+    box-shadow: 1px 1px #888;
+
+  }
+  .btn-A::after{
+    display: block;
+    margin-top:53px;
+    content: "A";
+    font-family: 'Futura Condensed';
+    font-size: 20px;
+  }
+  .btn-B{
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    top: 9px;
+    right: 74px;
+    width: 44px;
+    height: 44px;
+    background: #a93671;
+    border-radius: 100%;
+    box-shadow: 1px 1px #888;
+  }
+  .btn-B::after{
+    display: block;
+    margin-top:85px;
+    content: "B";
+    font-family: 'Futura Condensed';
+    font-size: 20px;
+  }
+  .btn-A:active, .btn-B:active{
+    box-shadow: none;
+    background: radial-gradient(circle, #882C5B 60%, #a93671 3%);
+  }
+  .btns-start-select {
+    position: absolute;
+    top: 200px;
+    left: 140px;
+    height: 12px;
+    width: 60px;
+    background: #999;
+    border-radius: 10px;
+    transform: rotate(-25deg);
+    box-shadow: 1px 1px #555, 57px 27px #999, 58px 28px #555, 0 0 0 5px #dfdfdf, 57px 27px 0 5px #dfdfdf; 
+  }
+
+  /*********** BOCINA *******/
+  .speakers {
+    content: "";
+    position: relative;
+    height: 70px;
+    width: 8px;
+    top: 90px;
+    left: 270px;
+    background: #ddd;
+    border-radius: 4px;
+    transform: rotate(-25deg);
+    box-shadow: 1px 0 #aaa, 20px 0 #ddd, 21px 0 #aaa, 40px 0 #ddd, 41px 0 #aaa, 60px 0 #ddd, 61px 0 #aaa, 80px 0 #ddd, 81px 0 #aaa, 100px 0 #ddd, 101px 0 #aaa;
+  }
+
+  /***********  ENTRADA DE AUDIFONOS **********/
+  .phones {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    padding: 3px 5px;
+    transform: translateX(-50%);
+    color: #cdcdcd;
+    background-color: #e8e8e8;
+    font-size: 8px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    border-radius: 30px;
+  }
+  .phones:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    bottom: -4px;
+    background-color: #e8e8e8;
+    left: 9px;
+  }
+  .phones:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 5px;
+    bottom: -4px;
+    left: 12px;
+    background-color: #ddd;
+    box-shadow: 5px 0 #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+
+
+/*******************fin PARTE IZQUIERDA ************************/
+
+/*****************************************************************
+******************** inicio PARTE DERECHA ************************
+******************************************************************/
+.r-screen-frame {
+  position: relative;
+  top: 60px;
+  left: 40px;
+  width: 342px;
+  height: 452px;
+  margin-bottom: 58px;
+  background-color: #777;
+  border-radius: 13px 13px 13px 13px;
+  box-shadow: 1px 1px #666;
+}
+.r-screen-cont {
+  position: relative;
+  top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #bdae58;
+  width: 325px;
+  height: 405px;
+  box-shadow: inset 3px 3px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+.r-label {
+  position: relative;
+  top: -30px;
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 10px;
+  font-family: sans-serif;
+  color: #b3b3b3;
+}
+#r-screen {
+  display: inline;
+  position: relative;   
+  opacity: 1;
+  top: 0px;
+  color: #8a891f;
+  font-size: 17px;
+  font-family: "Pretendo";
+  z-index: 10;
+animation: ejem 5s ease;
+}
+
+@keyframes ejem{
+  0%{
+    top: -150px;
+  }
+  100%{
+   top:0;
+  }
+}
+#r-screen div{
+  text-transform: capitalize;
+}
+#wait{
+  display: block;
+  text-align: center;
+  margin-top: 100px;
+}
+table#pokeData{
+  display: none;
+  width: 90%;
+  max-width: 90%;
+  margin-left: 5%;
+  font-size: 14px;
+  border-collapse: collapse;
+  margin-top: -5px;
+}
+#pokeData tr th{
+  background-color: #79770c;
+  color:#bdae58;
+  width: 100%;
+  max-width: 100%;
+}
+#pokeData tr th, #pokeData tr td{
+  border:1px solid #8a891f;
+}
+#pokeData tr td:last-child{
+  text-align: center;
+  width: 90%;
+  max-width: 90%;
+}
+#pokeData tr td:first-child{
+  text-align: center;
+  width: 10%;
+  max-width: 10%;
+}
+#pokeData{
+  color:#79770c;
+}
+p#name{
+  text-align: center;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+#pokeData tr td p{
+  text-transform: capitalize;
+}
+#stats{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  overflow:scroll;
+  overflow-x: hidden;
+  height: 100px;
+}
+#stats ul, #movs ul{
+  list-style-type: none;
+  text-align: left;
+  padding-left: 10px;
+  
+}
+#movs{
+  overflow:scroll;
+  height: 100px;
+  overflow-x: hidden;
+}
+img#img-pokemon{
+  display: block;
+  margin-top: -30px;
+  width: 100%;
+}

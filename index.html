@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/pokedex.css">
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <script src="./assets/js/pokedex.js"></script>
+    <title>Pokedex</title>
+</head>
+<body>
+    <main>
+        <div class="pokedex">
+           <div class="left-side">
+               <div class="on-off">
+                    < off-on >
+                </div>          
+                <div class="screen-frame">
+                    <div class="battery"></div>
+                    <div class="screen-cont">
+                        <div class="label">POKÉDEX LAUNCHX</div>
+                        <div id="screen">
+                            <p class="title">POKEDEX</p>
+                            <p id="info">Introduce el nombre de un pokemon y <span class="bolds">presiona el boton A</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-cont">
+                    <input type="text" name="pokeName" id="pokeName" placeholder="Nombre Pokémon">
+                    <div class="d-pad">
+                        <div class="vertical"></div>
+                        <div class="horizontal"></div>
+                    </div>
+                    <div class="btns-AB">
+                        <button class="btn-A" onclick="fetchPokemon()"></button>
+                        <div class="btn-B"></div>
+                    </div>
+                    <div class="btns-start-select"></div>
+                </div>
+                <div class="phones">phones</div>
+            </div>
+            <div class="right-side">
+                <div class="r-screen-frame">
+                    <div class="r-screen-cont">
+                        <div class="r-label">POKEMON DATA</div>
+                        <div id="r-screen"><p id="wait">Waiting</p> 
+                            <table id="pokeData">
+                                <tr>
+                                    <th colspan="2"><p id="name"></p></th>
+                                </tr>
+                                <tr>
+                                    <td><p>Tipo</p></td><td><p id="type"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>Estads</p></td><td><p id="stats"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>Movs</p></td><td><p id="movs"></p></td>
+                                </tr>
+
+                            </table>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="speakers"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
