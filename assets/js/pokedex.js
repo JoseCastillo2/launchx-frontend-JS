@@ -5,7 +5,6 @@ const fetchPokemon = () =>{
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
     fetch(url).then((res) => {
         if(res.status != 200 || pokeName == ''){
-            console.log(res);
             let msj = document.getElementById("screen");
             msj.innerHTML = '<p class="title">POKEDEX</p><p id="info">Intenta de nuevo</p>';
             document.getElementById("wait").style.display = "block";
@@ -16,7 +15,6 @@ const fetchPokemon = () =>{
         }
     }).then((data) =>{
         if(data){
-            console.log(data);
 
             let pokeData = {
                 nombre : data.name,
